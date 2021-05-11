@@ -1,0 +1,18 @@
+﻿@model Nop.Plugin.Payments.HyperPayCopyAndPay.Models.HyperPayModel
+@inject IWorkContext workContext;
+@{
+    Layout = "_Root";
+}
+
+@if (workContext.WorkingLanguage.Rtl)
+{
+    <script>
+        var wpwlOptions = {
+            locale: "@workContext.WorkingLanguage.UniqueSeoCode"
+        }
+    </script>
+}
+
+<script async src="@Model.RequestUrl/v1/paymentWidgets.js?checkoutId=@Model.FormId"></script>
+
+<form action="@Model.ValidateUrl" class="paymentWidgets" data-brands="@Model.PaymentType"></form>

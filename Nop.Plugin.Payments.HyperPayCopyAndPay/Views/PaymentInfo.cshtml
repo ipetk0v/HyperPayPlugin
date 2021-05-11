@@ -1,0 +1,78 @@
+﻿@{
+    Layout = "";
+}
+@using Nop.Plugin.Payments.HyperPayCopyAndPay.Models
+@model Nop.Plugin.Payments.HyperPayCopyAndPay.Models.PaymentInfoModel
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    .payment-method .payment-logo {
+        background-color: white;
+    }
+
+    /* Create two equal columns that floats next to each other */
+    .column {
+        float: left;
+        width: 50%;
+        padding: 10px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .payment-method .payment-logo label,
+    .column,
+    .label {
+        cursor: pointer;
+    }
+
+    @@media all and (max-width: 1000px) {
+        .column {
+            width: 100%;
+            padding: 50px;
+        }
+    }
+</style>
+
+<div class="payment-method">
+    <div class="form-group">
+        <div class="row">
+            <div class="column">
+                <div class="payment-logo">
+                    <label for="Payment_VisaMaster">
+                        <img width="150px" alt="Payment_VisaMaster" src="/Plugins/Payments.HyperPayCopyAndPay/visamster.png">
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        @Html.RadioButton("PaymentType", "VisaMaster", (Model.PaymentType == PaymentType.VisaMaster), new { id = "Payment_VisaMaster" })
+                        Visa / MasterCard
+                    </label>
+                </div>
+            </div>
+            <div class="column">
+                <div class="col-md-11">
+                    <div class="payment-logo">
+                        <label for="Payment_Mada">
+                            <img width="150px;" alt="Payment_Mada" src="/Plugins/Payments.HyperPayCopyAndPay/mada.png">
+                        </label>
+                    </div>
+                </div>
+                <div class="radio">
+                    <label>
+                        @Html.RadioButton("PaymentType", "Mada", (Model.PaymentType == PaymentType.Mada), new { id = "Payment_Mada" })
+                        Mada
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

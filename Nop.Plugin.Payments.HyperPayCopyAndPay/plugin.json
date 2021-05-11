@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Payment methods",
+  "FriendlyName": "HyperPay",
+  "SystemName": "Payments.HyperPayCopyAndPay",
+  "Version": "1.00",
+  "SupportedVersions": [ "4.30" ],
+  "Author": "DiezTech",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Payments.HyperPayCopyAndPay.dll",
+  "Description": "This plugin enables HyperPay order payments"
+}
